@@ -1,61 +1,61 @@
 ---
-title: "Week 2 Worklog"
+title: "Nhật ký công việc Tuần 2"
 date: 2026-11-09
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
 
-### Week 2 Objectives:
+### Mục tiêu Tuần 2:
 
-* Understand the fundamentals of Amazon VPC architecture (Subnets, Route Tables, ENIs, VPC Endpoints, Internet Gateways, NAT Gateways) as well as multi-VPC scaling and monitoring (VPC Peering, Transit Gateway, VPC Flow Logs).
+* Hiểu các kiến thức nền tảng về kiến trúc Amazon VPC (Subnet, Route Table, ENI, VPC Endpoint, Internet Gateway, NAT Gateway), cũng như khả năng mở rộng và giám sát nhiều VPC (VPC Peering, Transit Gateway, VPC Flow Logs).
 
-* Learn how on-premises networks connect to AWS using Site-to-Site VPN, Client-to-Site VPN, and Direct Connect, alongside traffic distribution via Elastic Load Balancing (Sticky Sessions, Gateway Load Balancer).
+* Tìm hiểu cách các mạng on-premises kết nối với AWS thông qua Site-to-Site VPN, Client-to-Site VPN và Direct Connect; đồng thời tìm hiểu cách phân phối lưu lượng bằng Elastic Load Balancing (Sticky Session, Gateway Load Balancer).
 
-* Grasp the core components of virtual machines on AWS, including Amazon EC2 instance types, AMIs, Key Pairs, backups, and Elastic Block Store (EBS).
+* Nắm được các thành phần cốt lõi của máy ảo trên AWS, bao gồm các loại Amazon EC2 instance, AMI, Key Pair, bản sao lưu và Elastic Block Store (EBS).
 
-* Understand the differences between stateful Security Groups and stateless Network ACLs (NACLs), and practice configuring inbound/outbound rules and subnet/instance associations.
+* Hiểu sự khác biệt giữa Security Group có trạng thái (stateful) và Network ACL (NACL) không trạng thái (stateless); thực hành cấu hình quy tắc inbound/outbound và liên kết với subnet/instance.
 
-* Gain hands-on experience using the AWS Console and VPC Resource Map to create a custom VPC, configure public and private subnets, attach an Internet Gateway, configure Route Tables, and launch secured EC2 instances across subnets.
+* Thực hành sử dụng AWS Console và VPC Resource Map để tạo VPC tùy chỉnh, cấu hình public/private subnet, gắn Internet Gateway, cấu hình Route Table và khởi chạy EC2 instance an toàn trên các subnet.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Learn VPC: <br>&emsp; - VPC <br>&emsp; - Subnet <br>&emsp; - Route Table <br>&emsp; - ENI <br>&emsp; - VPC Endpoin <br>&emsp; - Internet Gateway <br>&emsp; - NAT Gateway <br>                                                                                              | 09/11/2026 | 09/11/2026      | <https://youtu.be/O9Ac_vGHquM?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i>
-| 3   | - Learn VPC Security and Multi VPC: <br>&emsp; - Security Group <br>&emsp; - VPC Peering <br>&emsp; - VPC Flow logs <br>&emsp; - Transit Gateway <br>&emsp; - Network Access Control List <br>                                              | 10/11/2026 | 10/11/2026      | <https://youtu.be/BPuD1l2hEQ4?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
-| 4   | - Learn VPN and Direct Connect: <br>&emsp; - VPN Site to Site <br> - VPN Client to Side <br>&emsp; - Direct Connect <br>&emsp; - Elastic Load Balancing <br> &emsp; - Sticky Session <br>&emsp; - Gateway Load Balancer <br> Learn Compute VM on AWS: <br>&emsp; - EC2 <br>&emsp; - EC2 Instance Types <br>&emsp; - AMI <br>&emsp; - Backup <br>&emsp; - Key Pair <br>&emsp; - Elastic Book Store.  | 11/11/2026 | 11/11/2026      | <https://youtu.be/CXU8D3kyxIc> <br> <https://youtu.be/CXU8D3kyxIc> <br> https://youtu.be/yAR6QRT3N1k?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i <br> https://youtu.be/hKr_TfGP7NY?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i |
-| 5   | Practice Security Groups: <br>&emsp; -Navigate to the VPC Dashboard <br>&emsp; - Review Existing Configuration <br>&emsp; - Manage Inbound Rules <br>&emsp; - Manage Outbound Rules <br>&emsp; - Associate with Instances <br> Learn and practice about NACLs: <br>&emsp; -Default NACL <br>&emsp; - Custom NACL <br>&emsp; - Subnet Association <br>&emsp; - Rule Evaluation <br>&emsp; - Stateless Nature <br>&emsp; - Rule Configuration <br>                            | 12/11/2026 | 12/11/2026      | <https://youtu.be/B1qxOQLmavQ?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/GVDsDu9dOFY?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
-| 6   | Practice VPC Resource Map: <br>&emsp; - Access the VPC Console <br>&emsp; - Initiate VPC Creation Connect <br>&emsp; - Configure VPC Settings <br>&emsp; - Name the VPC <br>&emsp; - Define IP Range <br>&emsp; - Set Tenancy <br>&emsp; - Finalize Creation <br>&emsp; - Verify with Resource Map <br>                                                                             | 13/11/2026 | 13/11/2026      | <https://youtu.be/fZa_kQ69stI?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
-| 7   | Practice create VPC: <br>&emsp; - Access AWS VPC Service <br>&emsp; - Initiate VPC Creation <br>&emsp; - Configure VPC Settings (Name Tag, IPv4 CIDR Block, IPv6 Configuration) <br>&emsp; - Tenancy <br> Practice create Subnet: <br>&emsp; - Create the first subnet <br>&emsp; - Create the second subnet <br>&emsp; - Configure additional subnets <br>&emsp; - Enable Auto-assign Public IP <br>&emsp; - Verify settings <br> Practice create an Internet Gateway: <br>&emsp; - Locate Internet Gateway <br>&emsp; - Create the Gateway <br>&emsp; - Attach to VPC <br>&emsp; - Verification <br>                                                                       | 14/11/2026 | 14/11/2026      | <https://youtu.be/I-5gTPDCOI8?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/xl0hyM6qHgw?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/nSRrWRBSphc?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
-| 8   | Practice Create Route Table for Outbound Internet Routing via Internet Gateway: <br>&emsp; - Create a Route Table <br>&emsp; - Configure Internet Routing <br> practice Create security groups: <br>&emsp; - Create the First Security Group (Name, VPC, Inbound Rules) <br>&emsp; -Create the Second Security Group <br> Practice Create EC2 Instances in Subnets: <br>&emsp; - Configure Instance <br>&emsp; - Create Key Pair <br>&emsp; - Network Settings <br>&emsp; - Security <br>&emsp; - Launching the Private Subnet Instance <br>&emsp; - Network Settings <br>&emsp; - Launch and vertifications.                                                                         | 15/11/2026 | 15/11/2026      | <https://youtu.be/BclZq6Dvyjk?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/_6t-LnZndb0?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/duJEdF_g1To?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+### Các công việc cần thực hiện trong tuần này:
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 2 | Tìm hiểu VPC: VPC, Subnet, Route Table, ENI, VPC Endpoint, Internet Gateway và NAT Gateway. | 09/11/2026 | 09/11/2026 | |
+| 3 | Tìm hiểu bảo mật VPC và mô hình Multi-VPC: Security Group, VPC Peering, VPC Flow Logs, Transit Gateway và Network Access Control List (NACL). | 10/11/2026 | 10/11/2026 | |
+| 4 | Tìm hiểu VPN và Direct Connect: Site-to-Site VPN, Client-to-Site VPN, Direct Connect, Elastic Load Balancing, Sticky Session và Gateway Load Balancer. Tìm hiểu máy ảo trên AWS: EC2, các loại EC2 instance, AMI, backup, Key Pair và Elastic Block Store. | 11/11/2026 | 11/11/2026 | |
+| 5 | Thực hành Security Group: mở VPC Dashboard, xem lại cấu hình hiện có, quản lý quy tắc inbound/outbound và liên kết Security Group với instance. Tìm hiểu, thực hành NACL: NACL mặc định, NACL tùy chỉnh, liên kết subnet, thứ tự đánh giá quy tắc, đặc tính stateless và cấu hình quy tắc. | 12/11/2026 | 12/11/2026 | |
+| 6 | Thực hành VPC Resource Map: mở VPC Console, bắt đầu tạo VPC, cấu hình cài đặt VPC, đặt tên, xác định dải IP, chọn tenancy, hoàn tất tạo và kiểm tra trên Resource Map. | 13/11/2026 | 13/11/2026 | |
+| 7 | Thực hành tạo VPC: truy cập dịch vụ AWS VPC, bắt đầu tạo VPC, cấu hình Name Tag, IPv4 CIDR Block và IPv6; chọn tenancy. Thực hành tạo subnet thứ nhất, subnet thứ hai, cấu hình thêm subnet, bật tự động gán public IP và kiểm tra cài đặt. Thực hành tạo Internet Gateway, tìm Internet Gateway, tạo mới, gắn vào VPC và xác minh. | 14/11/2026 | 14/11/2026 | |
+| 8 | Thực hành tạo Route Table để định tuyến Internet outbound qua Internet Gateway: tạo Route Table và cấu hình định tuyến Internet. Thực hành tạo Security Group (tên, VPC, quy tắc inbound) và Security Group thứ hai. Thực hành tạo EC2 instance trong các subnet: cấu hình instance, tạo Key Pair, cài đặt mạng và bảo mật, khởi chạy instance ở private subnet, sau đó kiểm tra và xác minh. | 15/11/2026 | 15/11/2026 | |
 
+### Kết quả đạt được trong Tuần 2:
 
-### Week 2 Achievements:
+**Kiến thức nền tảng về AWS Networking và kiến trúc Multi-VPC**
 
-**AWS Networking Fundamentals & Multi-VPC Architecture**
-* Mastered the core components of Amazon Virtual Private Cloud (VPC), including subnets, route tables, Elastic Network Interfaces (ENIs), VPC endpoints, Internet Gateways (IGW), and NAT Gateways.
+* Nắm vững các thành phần cốt lõi của Amazon Virtual Private Cloud (VPC), bao gồm subnet, route table, Elastic Network Interface (ENI), VPC endpoint, Internet Gateway (IGW) và NAT Gateway.
 
-* Explored multi-VPC connectivity and traffic monitoring using VPC Peering, Transit Gateways, and VPC Flow Logs.
+* Tìm hiểu khả năng kết nối giữa nhiều VPC và giám sát lưu lượng bằng VPC Peering, Transit Gateway và VPC Flow Logs.
 
-**Hybrid Connectivity & Load Balancing**
+**Kết nối Hybrid và cân bằng tải**
 
-* Learned hybrid cloud networking mechanisms including Site-to-Site VPN, Client-to-Site VPN, and AWS Direct Connect.
+* Tìm hiểu các cơ chế networking cho hybrid cloud, bao gồm Site-to-Site VPN, Client-to-Site VPN và AWS Direct Connect.
 
-* Understood traffic management and distribution concepts through Elastic Load Balancing (ELB), sticky sessions, and Gateway Load Balancers.
+* Hiểu các khái niệm quản lý và phân phối lưu lượng thông qua Elastic Load Balancing (ELB), sticky session và Gateway Load Balancer.
 
-**Hybrid Connectivity & Load Balancing**
+**Máy ảo và lưu trữ trên AWS**
 
-* Covered core virtual machine and storage concepts on AWS, including Amazon EC2 instance types, Amazon Machine Images (AMIs), Key Pairs, backup strategies, and Elastic Block Store (EBS).
+* Tìm hiểu các khái niệm cốt lõi về máy ảo và lưu trữ trên AWS, bao gồm các loại Amazon EC2 instance, Amazon Machine Image (AMI), Key Pair, chiến lược backup và Elastic Block Store (EBS).
 
-**Network Security & Access ControlHybrid Connectivity & Load Balancing**
+**Bảo mật mạng và kiểm soát truy cập**
 
-* Practiced configuring stateful Security Groups (managing inbound/outbound rules and associating them with instances) and stateless Network Access Control Lists (NACLs) (configuring custom rules, understanding rule evaluation order, and managing subnet associations).
+* Thực hành cấu hình Security Group có trạng thái (quản lý quy tắc inbound/outbound và liên kết với instance) và Network Access Control List (NACL) không trạng thái (cấu hình quy tắc tùy chỉnh, nắm thứ tự đánh giá quy tắc và quản lý liên kết subnet).
 
-**Hands-on Infrastructure Provisioning & Deployment**
+**Thực hành cấp phát và triển khai hạ tầng**
 
-* Created and configured a custom VPC (defining name tags, IPv4/IPv6 CIDR blocks, and tenancy), provisioned multiple subnets with auto-assign public IP enabled, and verified layouts using the VPC Resource Map.
+* Tạo và cấu hình VPC tùy chỉnh (thiết lập Name Tag, khối IPv4/IPv6 CIDR và tenancy), tạo nhiều subnet với tùy chọn tự động gán public IP được bật, đồng thời kiểm tra bố cục bằng VPC Resource Map.
 
-* Created an Internet Gateway (IGW), attached it to the custom VPC, and configured Route Tables to enable outbound internet traffic.
+* Tạo Internet Gateway (IGW), gắn vào VPC tùy chỉnh và cấu hình Route Table để cho phép lưu lượng Internet outbound.
 
-* Built custom Security Groups and successfully launched and verified Amazon EC2 instances in both public and private subnets using newly created Key Pairs.
+* Tạo Security Group tùy chỉnh, khởi chạy thành công và xác minh Amazon EC2 instance trong cả public subnet lẫn private subnet bằng Key Pair mới tạo.
