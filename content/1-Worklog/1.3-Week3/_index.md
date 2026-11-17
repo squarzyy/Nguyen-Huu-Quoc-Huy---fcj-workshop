@@ -38,7 +38,7 @@ pre: " <b> 1.3. </b> "
 
 - Established secure connections via Remote Desktop Gateway (RDGW) and managed RDP authentication for Windows environments.
 
-** Automated Infrastructure & Configuration
+**Automated Infrastructure & Configuration**
 - Generated and managed instance credentials and key pairs while applying resource tagging and security hardening.
 
 - Initialized and executed AWS CloudFormation templates to automate the deployment of multi-VPC infrastructures.
