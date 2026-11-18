@@ -12,7 +12,7 @@ pre: " <b> 1.5. </b> "
 
 * Gain hands-on experience enabling and evaluating AWS Security Hub security standards, reviewing compliance scores across criteria, and performing proper resource cleanup.
 
-* Practice automating EC2 instance lifecycle management using AWS Lambda—setting up VPC and Security Groups, launching tagged EC2 instances, configuring Slack Incoming Webhooks for notifications, creating IAM Roles for Lambda, writing Start/Stop functions, and verifying automation results.
+* Practice automating EC2 instance lifecycle management using AWS Lambda setting up VPC and Security Groups, launching tagged EC2 instances, configuring Slack Incoming Webhooks for notifications, creating IAM Roles for Lambda, writing Start/Stop functions, and verifying automation results.
 
 * Master AWS resource tagging and organization strategies by creating and managing tags via the AWS Management Console and AWS CLI, filtering resources, organizing workloads into AWS Resource Groups, and configuring granular IAM Users and IAM Policies.
 
