@@ -1,59 +1,42 @@
 ---
-title: "Worklog Tuần 1"
-date: 2024-01-01
+title: "Nhật ký công việc Tuần 1"
+date: 2026-10-12
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 1:
 
-### Mục tiêu tuần 1:
+* Nắm vững các khái niệm nền tảng về Điện toán Đám mây (Cloud Computing), những điểm khác biệt nổi bật của AWS, hành trình chuyển đổi lên đám mây (Cloud Journey) và kiến trúc Hạ tầng Toàn cầu của AWS (Regions, Availability Zones, Edge Locations).
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm hiểu các công cụ quản lý dịch vụ trên AWS (AWS Service Management Tools) và các nguyên tắc tối ưu hóa chi phí (AWS Cost Optimization).
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* Thực hành khởi tạo và bảo mật tài khoản AWS, thiết lập xác thực đa yếu tố bằng thiết bị ảo (Virtual MFA Device), tạo nhóm quản trị viên (Admin Group) và cấu hình hỗ trợ xác thực tài khoản.
 
+* Thành thạo quản lý ngân sách và chi phí với AWS Budgets thông qua việc tạo nhiều loại ngân sách khác nhau (Template, Cost, Usage, Reserved Instance, Savings Plans), dọn dẹp tài nguyên thực hành, đồng thời tìm hiểu các gói hỗ trợ (AWS Support) và cách quản lý yêu cầu hỗ trợ.
 
-### Kết quả đạt được tuần 1:
+### Các công việc thực hiện trong tuần:
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2 | **Tìm hiểu Nền tảng Đám mây & Hạ tầng Toàn cầu AWS:** <br>&emsp; - Tổng quan Điện toán Đám mây AWS (AWS Cloud Computing) <br>&emsp; - Những điểm khác biệt của AWS <br>&emsp; - Hành trình chuyển đổi lên đám mây (Cloud Journey) <br>&emsp; - Hạ tầng toàn cầu của AWS (AWS Global Infrastructure) | 12/10/2026 | 12/10/2026 | <https://youtu.be/HxYZAK1coOI?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/IK59Zdd1poE?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/HSzrWGqo3ME?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/pjr5a-HYAjI?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 3 | **Tìm hiểu Công cụ Quản lý & Thực hành Thiết lập Bảo mật Tài khoản:** <br>&emsp; - Công cụ quản lý dịch vụ AWS (AWS Service Management Tools) <br>&emsp; - Tối ưu hóa chi phí trên AWS (AWS Cost Optimization) <br>&emsp; - Tạo tài khoản AWS mới <br>&emsp; - Cài đặt thiết bị xác thực ảo (Virtual MFA Device) | 13/10/2026 | 13/10/2026 | <https://youtu.be/2PQYqH_HkXw?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/IY61YlmXQe8?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/waR5S_lljrk?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/1dG5xutGbr4?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 4 | **Thực hành Quản trị IAM & Khởi tạo Ngân sách AWS Budgets:** <br>&emsp; - Tạo nhóm quản trị viên (Admin Group) <br>&emsp; - Cấu hình hỗ trợ xác thực tài khoản <br>&emsp; - Tạo ngân sách AWS từ mẫu có sẵn (Budget by Template) <br>&emsp; - Tạo ngân sách chi phí (Cost Budget) | 14/10/2026 | 14/10/2026 | <https://youtu.be/b9pK1oG534Q?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/69iKhwI7k2Y?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/_a09nLVw6Sg?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/sd_KCcZOou0?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 5 | **Thực hành Ngân sách Nâng cao & Dọn dẹp Tài nguyên:** <br>&emsp; - Tạo ngân sách mức sử dụng (Usage Budget) <br>&emsp; - Tạo ngân sách cho Reserved Instance (RI Budget) <br>&emsp; - Tạo ngân sách cho Savings Plans (Savings Plans Budget) <br>&emsp; - Dọn dẹp tài nguyên thực hành (Clean Up Resources) | 15/10/2026 | 15/10/2026 | <https://youtu.be/kkcdRBRnxl4?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/aPQynt3CfYc?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/NoF8eEIEA6M?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/KeZi7eOLpOA?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 6 | **Thực hành Các gói Hỗ trợ AWS & Quản lý Yêu cầu Hỗ trợ:** <br>&emsp; - Tìm hiểu các gói hỗ trợ AWS (AWS Support Packages) <br>&emsp; - Thực hành thay đổi gói hỗ trợ (Change Support Package) <br>&emsp; - Tạo và quản lý các yêu cầu hỗ trợ (Manage Support Requests) | 16/10/2026 | 16/10/2026 | <https://youtu.be/4FDcK0_kbfY?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/haafDPugAnE?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/ThJBaQ3DEBs?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Thành tựu đạt được trong Tuần 1:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+**Nền tảng Điện toán Đám mây & Hạ tầng Toàn cầu AWS**
+* Nắm vững lợi ích của Điện toán Đám mây, các ưu thế cạnh tranh của AWS, lộ trình chuyển đổi đám mây (Cloud Journey) và cách Hạ tầng Toàn cầu AWS (Regions, Availability Zones, Edge Locations) đảm bảo tính sẵn sàng cao và độ trễ thấp.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Tìm hiểu các công cụ quản lý dịch vụ AWS và những trụ cột cơ bản trong việc tối ưu hóa chi phí ngay từ giai đoạn thiết kế hệ thống.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+**Khởi tạo Tài khoản & Bảo mật Cơ bản trên AWS**
+* Tạo thành công tài khoản AWS mới và áp dụng các thực hành bảo mật tốt nhất ngay từ đầu, bao gồm kích hoạt xác thực đa yếu tố (Virtual MFA), thiết lập nhóm quản trị IAM Admin Group và cấu hình hỗ trợ xác thực tài khoản.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+**Quản trị Tài chính với AWS Budgets**
+* Thành thạo việc giám sát chi phí chủ động thông qua việc cấu hình đa dạng các loại ngân sách — Template Budget, Cost Budget, Usage Budget, Reserved Instance (RI) Budget và Savings Plans Budget — cũng như thực hành dọn dẹp tài nguyên sạch sẽ sau khi hoàn tất.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+**Các gói Hỗ trợ AWS & Quản lý Yêu cầu Kỹ thuật**
+* So sánh quyền lợi và cam kết dịch vụ (SLA) giữa các gói AWS Support, thực hành thao tác nâng/hạ cấp gói hỗ trợ và nắm vững quy trình tạo, theo dõi yêu cầu hỗ trợ qua AWS Support Center.
