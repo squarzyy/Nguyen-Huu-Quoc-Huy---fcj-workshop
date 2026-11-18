@@ -12,7 +12,7 @@ pre: " <b> 1.5. </b> "
 
 * Thực hành kích hoạt và đánh giá trạng thái bảo mật với AWS Security Hub, phân tích điểm tuân thủ theo từng bộ tiêu chí và dọn dẹp tài nguyên đúng cách.
 
-* Thực hành tự động hóa vòng đời máy chủ EC2 bằng AWS Lambda — thiết lập VPC và Security Group, khởi tạo EC2 gắn tag, cấu hình Incoming Webhooks để gửi thông báo, tạo IAM Role cho Lambda, viết hàm tự động bật/tắt (Start/Stop) EC2 và kiểm tra kết quả hoạt động.
+* Thực hành tự động hóa vòng đời máy chủ EC2 bằng AWS Lambda thiết lập VPC và Security Group, khởi tạo EC2 gắn tag, cấu hình Incoming Webhooks để gửi thông báo, tạo IAM Role cho Lambda, viết hàm tự động bật/tắt (Start/Stop) EC2 và kiểm tra kết quả hoạt động.
 
 * Thành thạo chiến lược gắn thẻ (Tagging) và tổ chức tài nguyên AWS bằng cách tạo và quản lý tag qua giao diện Console lẫn AWS CLI, lọc tài nguyên, gom nhóm tài nguyên bằng AWS Resource Groups, cũng như cấu hình chi tiết IAM User và IAM Policy.
 
