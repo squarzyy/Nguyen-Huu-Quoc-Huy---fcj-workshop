@@ -13,12 +13,12 @@ chapter: false
 
 &emsp; **Phone Number:** 0789798948
 
-&emsp; **Email:** quochuy03122005@gmail.com
+&emsp; **Email:** huynhqgcs230317@fpt.edu.vn
 
 &emsp; **University:** University of Greenwich Vietnam | Ho Chi Minh
 &emsp; **Major:** Information Technology
 
-&emsp; **Class:** AWS082025
+&emsp; **Class:** AWS102026
 
 &emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
 
