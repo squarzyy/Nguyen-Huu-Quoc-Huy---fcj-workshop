@@ -1,59 +1,36 @@
 ---
-title: "Worklog Tuần 10"
-date: 2024-01-01
-weight: 2
+title: "Nhật ký công việc Tuần 10"
+date: 2026-12-14
+weight: 1
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 10:
 
-### Mục tiêu tuần 10:
+* Trải nghiệm thực tế việc tương tác và quản lý tài nguyên AWS thông qua nhiều giao diện khác nhau, bao gồm dòng lệnh trên trình duyệt với AWS CloudShell, giao diện đồ họa AWS Management Console và lập trình qua bộ công cụ AWS SDK.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Thực hành khởi tạo và cấu hình môi trường phát triển tích hợp trên đám mây (Cloud IDE) với AWS Cloud9.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* Thành thạo các bước chuẩn bị dữ liệu đầu vào bằng cách tải bộ dữ liệu mẫu, lưu trữ tập trung lên Amazon S3 và thiết lập AWS Glue DataBrew để sẵn sàng cho quá trình làm sạch, chuẩn hóa dữ liệu trực quan.
 
+### Các công việc thực hiện trong tuần:
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2 | **Thực hành Thao tác với AWS CloudShell & AWS Management Console:** <br>&emsp; - Thực thi câu lệnh và quản lý tài nguyên qua AWS CloudShell <br>&emsp; - Thao tác quản lý dịch vụ trên giao diện AWS Management Console | 14/12/2026 | 14/12/2026 | <https://youtu.be/cqczgtnvHjc?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/_UiSyyly110?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 3 | **Thực hành AWS SDK & Khởi tạo Môi trường Lập trình Cloud9:** <br>&emsp; - Tương tác lập trình với các dịch vụ AWS thông qua AWS SDK <br>&emsp; - Tạo và cấu hình môi trường phát triển AWS Cloud9 Instance | 15/12/2026 | 15/12/2026 | <https://youtu.be/gjY6l4elopw?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/rFr23_roN1s?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 4 | **Thực hành Tải và Chuẩn bị Bộ dữ liệu (Dataset):** <br>&emsp; - Tải xuống và kiểm tra bộ dữ liệu nguồn phục vụ xử lý dữ liệu | 16/12/2026 | 16/12/2026 | <https://youtu.be/QSTkzhED9xY?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 5 | **Thực hành Đưa Dữ liệu lên Đám mây (Amazon S3):** <br>&emsp; - Tải bộ dữ liệu thô (Dataset) lên Amazon S3 Bucket | 17/12/2026 | 17/12/2026 | <https://youtu.be/PQvPH8oJgxY?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 6 | **Thực hành Thiết lập Công cụ Tiền xử lý Dữ liệu (AWS Glue DataBrew):** <br>&emsp; - Cấu hình và thiết lập môi trường làm việc trên AWS Glue DataBrew | 18/12/2026 | 18/12/2026 | <https://youtu.be/T-OPhEXdo9Y?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
 
-### Kết quả đạt được tuần 10:
+### Thành tựu đạt được trong Tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Quản trị AWS Đa giao diện & Môi trường Lập trình Cloud (CloudShell, Console, SDK & Cloud9)**
+* Thực hành thành thạo việc quản lý tài nguyên AWS qua cả 3 phương thức chính: chạy lệnh trực tiếp trên trình duyệt với AWS CloudShell, thao tác giao diện trực quan trên AWS Management Console và gọi API tự động thông qua AWS SDK.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Khởi tạo và cấu hình thành công AWS Cloud9 Instance, cung cấp môi trường lập trình đám mây tích hợp sẵn AWS CLI và các thư viện SDK cần thiết.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+**Lưu trữ Dữ liệu Đám mây & Thiết lập AWS Glue DataBrew**
+* Hoàn tất bước chuẩn bị hạ tầng dữ liệu thông qua việc tải bộ dữ liệu mẫu và đưa lên lưu trữ tập trung tại Amazon S3.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Thiết lập và kết nối dữ liệu S3 vào AWS Glue DataBrew, tạo tiền đề cho quy trình làm sạch, biến đổi và trực quan hóa dữ liệu không cần viết mã (no-code).
