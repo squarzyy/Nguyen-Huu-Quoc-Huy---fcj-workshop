@@ -1,59 +1,36 @@
 ---
-title: "Worklog Tuần 11"
-date: 2024-01-01
-weight: 2
+title: "Nhật ký công việc Tuần 11"
+date: 2026-12-21
+weight: 1
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 11:
 
-### Mục tiêu tuần 11:
+* Thành thạo việc đánh giá chất lượng và chuẩn bị dữ liệu trực quan bằng AWS Glue DataBrew thông qua việc chạy các tác vụ phân tích hồ sơ dữ liệu (Data Profiling) để kiểm tra thống kê, bất thường và phân phối dữ liệu, sau đó xây dựng các quy tắc làm sạch và biến đổi dữ liệu.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Nắm vững và chuẩn bị đầy đủ các bước tiền đề cho đường ống ETL (Extract, Transform, Load) bao gồm phân quyền IAM, cấu trúc lưu trữ và thiết lập môi trường nguồn/đích.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* Trải nghiệm thực tế quy trình xây dựng đường ống dữ liệu serverless tự động với AWS Glue — thu thập và lưu trữ dữ liệu thô trên Amazon S3, lập danh mục siêu dữ liệu (Metadata) bằng AWS Glue Crawler và Data Catalog, cũng như thực thi các tác vụ biến đổi dữ liệu ETL.
 
+### Các công việc thực hiện trong tuần:
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2 | **Thực hành Phân tích Hồ sơ Dữ liệu (Data Profiling) với AWS Glue DataBrew:** <br>&emsp; - Chạy tác vụ Data Profiling để đánh giá chất lượng, phân phối và phát hiện bất thường của dữ liệu | 21/12/2026 | 21/12/2026 | <https://youtu.be/3Vp9gh8YUCY?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 3 | **Thực hành Làm sạch & Biến đổi Dữ liệu Trực quan:** <br>&emsp; - Làm sạch và chuẩn hóa bộ dữ liệu (Clean & Transform Data) bằng AWS Glue DataBrew | 22/12/2026 | 22/12/2026 | <https://youtu.be/O-xRfw94xlY?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 4 | **Thực hành Các bước Chuẩn bị Hạ tầng ETL:** <br>&emsp; - Hoàn thiện các bước chuẩn bị (Preparatory Steps: phân quyền IAM, cấu hình S3 và môi trường xử lý) | 23/12/2026 | 23/12/2026 | <https://youtu.be/7qyGJLJfhws?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 5 | **Thực hành Thu thập, Lưu trữ & Lập danh mục Dữ liệu:** <br>&emsp; - Thu thập và lưu trữ dữ liệu thô vào Amazon S3 (Ingest and Store) <br>&emsp; - Quét lược đồ và lập danh mục siêu dữ liệu với AWS Glue Data Catalog (Catalog Data) | 24/12/2026 | 24/12/2026 | <https://youtu.be/wZLYToRrELU?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/mn0rSxSM9sw?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 6 | **Thực hành Biến đổi Dữ liệu Serverless với AWS Glue:** <br>&emsp; - Xây dựng và chạy tác vụ biến đổi dữ liệu ETL (Transform Data with AWS Glue) | 25/12/2026 | 25/12/2026 | <https://youtu.be/Eym-acAcD6s?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
 
-### Kết quả đạt được tuần 11:
+### Thành tựu đạt được trong Tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+**Phân tích Hồ sơ, Làm sạch & Biến đổi Dữ liệu Trực quan (AWS Glue DataBrew)**
+* Thực thi các tác vụ Data Profiling trên AWS Glue DataBrew để tự động đánh giá chất lượng tập dữ liệu, phát hiện giá trị thiếu hoặc ngoại lai (outliers) và thống kê chi tiết từng cột dữ liệu.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Xây dựng và chạy các kịch bản (recipes) không cần viết mã để làm sạch, chuẩn hóa và sẵn sàng dữ liệu cho các bước phân tích tiếp theo.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+**Đường ống Xử lý Dữ liệu ETL Serverless Hoàn chỉnh (Amazon S3 & AWS Glue)**
+* Thiết lập đầy đủ các quyền hạn IAM và cấu trúc lưu trữ cần thiết cho quy trình kỹ thuật dữ liệu tự động.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Thu thập và lưu trữ dữ liệu thô vào hồ dữ liệu (Data Lake) trên Amazon S3, tự động nhận diện lược đồ và tạo bảng siêu dữ liệu thông qua AWS Glue Crawler, đồng thời biến đổi dữ liệu quy mô lớn bằng tác vụ AWS Glue ETL.
