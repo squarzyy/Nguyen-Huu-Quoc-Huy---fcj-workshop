@@ -1,3 +1,4 @@
+
 ---
 title: "Event 1"
 date: 2024-01-01
@@ -116,6 +117,6 @@ Attending the **“GenAI-powered App-DB Modernization”** workshop was extremel
 - AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
 
 #### Some event photos
-*Add your event photos here*  
+<img width="2048" height="1536" alt="Event 1" src="https://github.com/user-attachments/assets/3fa5f7ae-dd46-4690-bfae-b6967699841e" />
 
 > Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
