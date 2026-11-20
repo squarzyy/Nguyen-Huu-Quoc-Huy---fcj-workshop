@@ -6,6 +6,7 @@ chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
+
 ### Mục tiêu Tuần 6:
 
 * Thành thạo các cơ chế kiểm soát truy cập nâng cao trên AWS IAM thông qua việc tạo IAM Role, chuyển đổi vai trò (Switch Role) và áp dụng kiểm soát truy cập dựa trên thuộc tính (ABAC) bằng điều kiện Tag và chính sách hạn chế (Restriction Policy).
@@ -24,6 +25,7 @@ pre: " <b> 1.6. </b> "
 | 4 | **Thực hành Kiểm thử Giới hạn IAM & Tạo Khóa AWS KMS:** <br>&emsp; - Kiểm thử giới hạn quyền của IAM User <br>&emsp; - Tạo IAM Policy và IAM Role tùy chỉnh <br>&emsp; - Tạo IAM Group và IAM User <br>&emsp; - Khởi tạo khóa quản lý mã hóa (Key Management - KMS) | 18/11/2026 | 18/11/2026 | <https://youtu.be/B0gkb8W6jGA?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/XPUfX9proJg?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/LWRGmjNr8DQ?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/XdUKBuwEEr8?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
 | 5 | **Thực hành Amazon S3 & Ghi nhật ký Kiểm toán AWS CloudTrail:** <br>&emsp; - Tạo Amazon S3 Bucket <br>&emsp; - Tải dữ liệu lên S3 Bucket <br>&emsp; - Khởi tạo AWS CloudTrail <br>&emsp; - Cấu hình ghi nhật ký hoạt động vào CloudTrail | 19/11/2026 | 19/11/2026 | <https://youtu.be/F4Q1XUjbiDU?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/MQjFSA5obV8?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/3G6RW9gpwM4?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/On0_HI8en-s?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
 | 6 | **Thực hành Truy vấn Log với Amazon Athena & Mã hóa S3:** <br>&emsp; - Thiết lập dịch vụ truy vấn Amazon Athena <br>&emsp; - Truy xuất và phân tích dữ liệu CloudTrail bằng Athena <br>&emsp; - Kiểm thử và chia sẻ dữ liệu được mã hóa trên S3 <br>&emsp; - Tạo IAM Group phục vụ phân quyền | 20/11/2026 | 20/11/2026 | <https://youtu.be/On0_HI8en-s?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/SWJDiY1fMjQ?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/JOyU3yEgQRk?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/ptog1aBHeko?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+
 
 ### Thành tựu đạt được trong Tuần 6:
 
