@@ -1,59 +1,42 @@
 ---
-title: "Worklog Tuần 8"
-date: 2024-01-01
+title: "Nhật ký công việc Tuần 8"
+date: 2026-11-30
 weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### Mục tiêu Tuần 8:
 
-### Mục tiêu tuần 8:
+* Thực hành kết nối tới máy chủ EC2 Windows thông qua RDP Client và AWS Systems Manager Fleet Manager để cấu hình các cơ sở dữ liệu nguồn (Microsoft SQL Server và Oracle) sẵn sàng cho quá trình di chuyển dữ liệu (Migration).
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Thành thạo chuyển đổi lược đồ cơ sở dữ liệu không đồng nhất (Heterogeneous Schema Conversion) sang Amazon Aurora MySQL — xử lý ràng buộc (constraints), cấu hình đích đến và chuyển đổi schema từ SQL Server và Oracle.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+* Thực hành triển khai và giám sát quá trình di chuyển dữ liệu với AWS Database Migration Service (DMS), bao gồm tạo Endpoint, Migration Task, kiểm tra dữ liệu trên Amazon S3, chạy DMS Serverless, cấu hình thông báo sự kiện và phân tích nhật ký (Logs).
 
+* Rèn luyện kỹ năng xử lý sự cố (Troubleshooting) các lỗi thường gặp khi di chuyển dữ liệu trên AWS DMS (tràn bộ nhớ Memory Pressure và lỗi bảng Table Errors), đồng thời tìm hiểu luồng thu thập dữ liệu thời gian thực với Delivery Stream và AWS Glue Crawler.
 
-### Kết quả đạt được tuần 8:
+### Các công việc thực hiện trong tuần:
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 2 | **Thực hành Kết nối EC2 Windows & Cấu hình Cơ sở dữ liệu Nguồn:** <br>&emsp; - Kết nối EC2 qua RDP Client <br>&emsp; - Kết nối EC2 qua AWS Systems Manager Fleet Manager <br>&emsp; - Cấu hình cơ sở dữ liệu nguồn SQL Server <br>&emsp; - Kết nối cơ sở dữ liệu nguồn Oracle | 30/11/2026 | 30/11/2026 | <https://youtu.be/cxwAOP1379s?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/nzvE2DYso38?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/cXbuxFVL6mU?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/uIZg8LOvFvw?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 3 | **Thực hành Chuẩn bị DB Nguồn & Thiết lập Dự án Chuyển đổi sang Aurora MySQL:** <br>&emsp; - Cấu hình cơ sở dữ liệu nguồn Oracle phục vụ migration <br>&emsp; - Gỡ bỏ ràng buộc (Drop Constraint) trước khi di chuyển dữ liệu <br>&emsp; - Cấu hình cơ sở dữ liệu đích Amazon Aurora MySQL <br>&emsp; - Tạo dự án chuyển đổi từ MSSQL sang Aurora MySQL | 01/12/2026 | 01/12/2026 | <https://youtu.be/XGnBdkHrank?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/K7qK2X6AXMk?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/JAJhc5rGOOM?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/bTWkX3xHN4s?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 4 | **Thực hành Chuyển đổi Schema Không đồng nhất & Tác vụ AWS DMS:** <br>&emsp; - Chuyển đổi schema từ MSSQL sang Aurora MySQL <br>&emsp; - Chuyển đổi schema từ Oracle sang MySQL <br>&emsp; - Tạo Endpoint và Migration Task trên AWS DMS <br>&emsp; - Kiểm tra dữ liệu đã di chuyển trên Amazon S3 | 02/12/2026 | 02/12/2026 | <https://youtu.be/s-6mXTFXwG8?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/rFzmt9GnLRM?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/4LoLN6D1UU8?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/mlnX3okE09A?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 5 | **Thực hành AWS DMS Serverless, Giám sát & Xử lý Lỗi Bộ nhớ:** <br>&emsp; - Tạo tác vụ di chuyển dữ liệu AWS DMS Serverless <br>&emsp; - Cấu hình thông báo sự kiện (Event Notifications) <br>&emsp; - Kiểm tra và phân tích nhật ký (Logs) quá trình migration <br>&emsp; - Xử lý sự cố tình huống: Áp lực bộ nhớ (Memory Pressure) | 03/12/2026 | 03/12/2026 | <https://youtu.be/tWGwAz_Ewk4?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/5PiMfm6ulJk?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/TDlc5bRh6H8?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/hB6vXJunUAY?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
+| 6 | **Thực hành Xử lý Lỗi Bảng DMS & Thu thập Dữ liệu Streaming:** <br>&emsp; - Xử lý sự cố tình huống: Lỗi bảng dữ liệu (Table Error) <br>&emsp; - Tạo luồng phân phối dữ liệu (Delivery Stream) <br>&emsp; - Khởi tạo dữ liệu mẫu (Sample Data) <br>&emsp; - Tạo AWS Glue Crawler để quét và lập danh mục dữ liệu | 04/12/2026 | 04/12/2026 | <https://youtu.be/MU8XHe3OoxQ?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/a85LUgxpPUI?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/4qgqk6vA-to?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> <br> <https://youtu.be/MQRJ_v8HYHM?list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i> |
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Thành tựu đạt được trong Tuần 8:
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+**Quản trị Máy chủ & Cấu hình Cơ sở dữ liệu Nguồn**
+* Kết nối thành công tới các máy chủ EC2 Windows bằng cả RDP Client truyền thống và AWS Systems Manager Fleet Manager trên trình duyệt để thiết lập môi trường cơ sở dữ liệu nguồn Microsoft SQL Server và Oracle.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+**Chuyển đổi Lược đồ Cơ sở dữ liệu Không đồng nhất (SQL Server & Oracle sang MySQL/Aurora)**
+* Chuẩn bị dữ liệu nguồn thông qua việc quản lý ràng buộc (constraints), cấu hình cơ sở dữ liệu đích Amazon Aurora MySQL và thực hiện chuyển đổi schema tự động từ cả SQL Server lẫn Oracle sang hệ quản trị tương thích MySQL.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+**Triển khai AWS DMS, DMS Serverless & Giám sát Hệ thống**
+* Thiết lập các điểm kết nối nguồn/đích (bao gồm Amazon S3), vận hành tác vụ di chuyển dữ liệu tiêu chuẩn cũng như AWS DMS Serverless, cấu hình thông báo sự kiện và theo dõi tiến trình thông qua hệ thống Logs.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+**Xử lý Sự cố Migration & Lập danh mục Dữ liệu Streaming**
+* Chẩn đoán và khắc phục thành công các kịch bản lỗi thực tế trên AWS DMS liên quan đến quá tải bộ nhớ (Memory Pressure) và lỗi ở cấp độ bảng (Table Errors).
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Xây dựng luồng xử lý dữ liệu streaming bằng cách khởi tạo Delivery Stream, tạo dữ liệu mẫu và sử dụng AWS Glue Crawler để tự động nhận diện, lập danh mục lược đồ dữ liệu.
