@@ -1,31 +1,53 @@
 ---
 title: "Blog 2"
-date: 2024-01-01
-weight: 1
+date: 2026-11-24
+weight: 
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+# WHAT IS EC2 & COMPUTE COST OPTIMIZATION FOR SMALL AND MEDIUM PROJECTS ON AWS?
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+When moving applications to AWS, Amazon EC2 is often the most familiar service—yet also one of the fastest ways to burn through a budget if instance types are chosen by guesswork. For small and medium projects, you can save significantly while maintaining steady performance by following a few straightforward principles below.
 
-Key points to know:
+### 1. Choose the Right Pricing Models
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+Instead of defaulting to On-Demand for everything (pay-as-you-go flexibility, but the highest unit rate), consider combining:
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+* **On-Demand Instances:** Ideal for early development, short-term experiments, or workloads with unpredictable traffic.
+* **Savings Plans / Reserved Instances:** If your project runs steadily 24/7 and you plan to keep it running for at least 1 year, committing to consistent usage lowers costs substantially compared to On-Demand.
+* **Spot Instances:** Take advantage of spare AWS capacity at a steep discount. Well-suited for background jobs, batch processing, test/CI-CD pipelines, or fault-tolerant workloads that can handle sudden interruptions.
 
-...Image...
+### 2. Avoid Over-Provisioning (Right-Sizing)
 
-...Link...
+A common mistake for beginners is picking an oversized instance "just to be safe," leaving actual CPU and RAM utilization below 15–20%.
 
-...Guide...
+* Start with a right-sized instance (e.g., `t3` / `t4g` families for small web apps or internal APIs) and monitor metrics with **Amazon CloudWatch**.
+* Consider **AWS Graviton** processors (ARM-based architecture such as `t4g`, `m7g`), which typically deliver better price-performance than comparable x86 instances.
+
+### 3. Turn Off Idle Resources
+
+For Dev / Staging / Test environments, teams usually work during business hours:
+
+* Turning off instances outside working hours and on weekends can cut runtime from ~730 hours/month down to roughly 180–200 hours/month.
+* You can use **AWS Instance Scheduler** or combine **Amazon EventBridge + AWS Lambda** to automatically start and stop EC2 instances on a schedule.
+
+### 4. Consider Serverless for Non-Continuous Workloads
+
+You don't always need an EC2 instance running 24/7. If your project has low-traffic APIs, webhooks, or short scheduled tasks, moving to **AWS Lambda** (billed per request and execution duration in milliseconds) keeps costs near zero when there is no traffic.
+
+### Summary
+
+Cost optimization on AWS isn't about cutting corners at any cost—it's about paying accurately for what your system actually uses. By reviewing utilization regularly, picking the right Pricing Model, and automatically stopping test environments off-hours, your small project can save a meaningful amount of budget every month.
+
+**References:**
+1. AWS Documentation, Amazon EC2 billing and purchasing options — <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html>
+2. AWS Documentation, Choosing a purchasing option for Amazon EC2 — <https://docs.aws.amazon.com/decision-guides/latest/decision-guides/ec2-purchasing-options-aws-how-to-choose.html>
+3. AWS Solutions, Instance Scheduler on AWS — <https://docs.aws.amazon.com/solutions/instance-scheduler-on-aws/>
+4. AWS, AWS Lambda Pricing — <https://aws.amazon.com/lambda/pricing/>
+
+**Images:**
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/dd96e8bf-14aa-48ca-aeba-ff0dee411ca8" />
+
+**Post link:**
+<https://www.facebook.com/share/1EugopND2c/?>
