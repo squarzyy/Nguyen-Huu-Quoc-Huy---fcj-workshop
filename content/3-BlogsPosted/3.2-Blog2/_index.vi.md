@@ -1,59 +1,53 @@
 ---
-title: "Blog 3"
+title: "Blog 2"
 date: 2026-11-24
-weight: 1
+weight: 2
 chapter: false
-pre: " <b> 3.3. </b> "
+pre: " <b> 3.2. </b> "
 ---
 
-# AMAZON VPC LÀ GÌ? HIỂU NHANH VỀ "NGÔI NHÀ RIÊNG" CỦA BẠN TRÊN AWS
+# THẾ NÀO LÀ TỐI ƯU CHI PHÍ EC2 & COMPUTE CHO DỰ ÁN VỪA VÀ NHỎ TRÊN AWS?
 
-Khi mới bắt đầu làm quen với Cloud, nhiều bạn thường đặt máy chủ (EC2) hay cơ sở dữ liệu (RDS) lên chạy ngay mà chưa để ý đến mạng bên dưới. Nhưng trong thực tế, việc tách biệt và kiểm soát luồng mạng chính là nền tảng để hệ thống an toàn. Và đó là lúc **Amazon VPC (Virtual Private Cloud)** xuất hiện.
+Khi đưa ứng dụng lên AWS, Amazon EC2 thường là dịch vụ quen thuộc nhất nhưng cũng là nơi dễ "ngốn" ngân sách nhanh nhất nếu chọn cấu hình theo cảm tính. Với các dự án vừa và nhỏ, bạn hoàn toàn có thể tiết kiệm đáng kể chi phí mà vẫn giữ hiệu năng ổn định bằng một vài nguyên tắc đơn giản dưới đây.
 
-### 1. Hình dung siêu đơn giản về VPC
+### 1. Chọn đúng loại hình thanh toán (Pricing Models)
 
-Hãy tưởng tượng AWS là một khu đô thị lớn, còn VPC là một khu biệt thự riêng biệt dành cho hệ thống của bạn. Bên trong khu vực riêng đó, bạn có thể tự quy hoạch:
+Thay vì mặc định chạy tất cả bằng On-Demand (trả theo giờ sử dụng, linh hoạt nhưng đơn giá cao nhất), bạn có thể cân nhắc kết hợp:
 
-* Địa chỉ IP nội bộ (dải CIDR, ví dụ `10.0.0.0/16`)
-* Phân chia thành các khu nhỏ hơn gọi là **Subnet**
-* Quy định ai được đi ra ngoài Internet, ai chỉ được ở trong nội bộ
+* **On-Demand Instances:** Phù hợp khi mới phát triển, thử nghiệm ngắn hạn hoặc các workload chưa đoán trước được lưu lượng.
+* **Savings Plans / Reserved Instances:** Nếu dự án đã chạy ổn định 24/7 và bạn dự kiến duy trì ít nhất 1 năm, cam kết mức sử dụng này giúp giảm chi phí đáng kể so với On-Demand.
+* **Spot Instances:** Tận dụng tài nguyên nhàn rỗi của AWS với mức giá rất rẻ. Rất hợp cho các tác vụ chạy ngầm, xử lý batch, test/CI-CD hoặc những ứng dụng chịu được việc gián đoạn đột ngột.
 
-Nhờ có VPC, tài nguyên của bạn được cô lập logic với các khách hàng khác trên AWS và bạn nắm quyền kiểm soát cấu hình mạng cho riêng mình.
+### 2. Tránh cấp thừa cấu hình (Right-Sizing)
 
-**Ví dụ:** Nhà bạn nằm ở ngoại ô có số nhà đầy đủ, có khoảng đất riêng sau nhà. Với mảnh đất này bạn có thể lựa chọn xây một hồ bơi, một vườn hoa hay một góc trồng trọt sau nhà và hoàn toàn tách biệt với các nhà khác. Vì là nhà mình, bạn có thể quyết định ai có thể đến thăm hoặc ở lại tùy ý.
+Một lỗi phổ biến của người mới là chọn instance quá mạnh "cho chắc", dẫn đến CPU và RAM thực tế chỉ dùng dưới 15–20%.
 
-### 2. Các khái niệm cốt lõi cần nắm
+* Bắt đầu từ kích thước vừa đủ (ví dụ dòng `t3` / `t4g` cho web app nhỏ, API nội bộ) và theo dõi chỉ số qua **Amazon CloudWatch**.
+* Cân nhắc các dòng chip **AWS Graviton** (kiến trúc ARM như `t4g`, `m7g`): thường cho hiệu năng trên giá thành (*price-performance*) tốt hơn so với dòng x86 tương đương.
 
-Bạn không cần nhớ toàn bộ tài liệu mạng phức tạp ngay từ đầu đâu, chỉ cần hiểu rõ 4 mảnh ghép sau là đủ đọc hiểu hầu hết kiến trúc cơ bản rồi nha:
+### 3. Tắt tài nguyên khi không sử dụng
 
-* **VPC & CIDR Block:** Vùng mạng ảo và dải địa chỉ IP tổng của VPC đó.
-* **Public Subnet vs. Private Subnet:**
-  * **Public Subnet:** Phù hợp cho các thành phần cần giao tiếp trực tiếp với Internet (như web server công khai, load balancer), đi kèm route ra **Internet Gateway (IGW)**.
-  * **Private Subnet:** Phù hợp cho database hoặc backend nội bộ. Không nên mở trực tiếp ra Internet để giảm rủi ro bị tấn công.
-* **Security Group (SG):** "Tường lửa" hoạt động ở cấp độ tài nguyên (như EC2 instance), mang tính **stateful** (nếu cho phép request đi vào thì response tương ứng tự động được đi ra).
-* **Network ACL (NACL):** Lớp kiểm soát lưu lượng ở cấp độ Subnet, mang tính **stateless** (cần cấu hình rõ cả chiều inbound và outbound).
+Với môi trường Dev / Staging / Test, đội ngũ thường chỉ làm việc trong giờ hành chính:
 
-### 3. Một vài lưu ý nhỏ cho người mới
+* Nếu tắt máy chủ ngoài giờ làm việc và cuối tuần, thời gian chạy thực tế có thể giảm từ ~730 giờ/tháng xuống còn khoảng 180–200 giờ/tháng.
+* Bạn có thể dùng **AWS Instance Scheduler** hoặc kết hợp **Amazon EventBridge + AWS Lambda** để tự động bật/tắt EC2 theo lịch hẹn.
 
-Mặc dù nghe có vẻ đơn giản nhưng ta cũng nên nắm rõ những quy tắc sau để tránh rắc rối:
+### 4. Cân nhắc Serverless cho tác vụ không chạy liên tục
 
-* **Đặt tên rõ ràng:** Khi tạo VPC, Subnet, Route Table hay Security Group, hãy đặt tên có quy ước (ví dụ `vpc-dev-ap-southeast-1`, `snet-private-db-1a`) để không bị rối khi hệ thống lớn hơn.
-* **Tránh mở `0.0.0.0/0` bừa bãi:** Với cổng quản trị như SSH (port 22) hay RDP (port 3389), chỉ nên mở cho IP của bạn thay vì mở cho toàn bộ Internet.
-* **Dọn dẹp tài nguyên sau khi làm lab/test (nhớ suốt đời luôn):** Dù bản thân VPC không tính phí tạo mạng cơ bản, một số thành phần đi kèm (như **NAT Gateway**) có thể phát sinh chi phí nếu bạn quên xóa sau khi thực hành xong. Đừng như mình, bay mấy $ khi để NAT qua đêm.
+Không phải lúc nào cũng cần một máy chủ EC2 bật 24/24. Nếu dự án có các API ít truy cập, webhook, hoặc tác vụ định kỳ ngắn, chuyển sang **AWS Lambda** (trả tiền theo số lần gọi và thời gian thực thi tính bằng mili-giây) sẽ giúp chi phí gần như bằng 0 khi không có người dùng.
 
 ### Tóm lại
 
-Amazon VPC giúp bạn xây dựng một không gian mạng riêng, có trật tự và an toàn hơn cho tài nguyên trên AWS. Nắm vững VPC, Subnet và Security Group sẽ giúp bạn tự tin hơn rất nhiều khi triển khai các dịch vụ khác.
+Tối ưu chi phí trên AWS không phải là cắt giảm bằng mọi giá, mà là trả tiền đúng cho những gì hệ thống thực sự dùng. Chỉ cần theo dõi mức sử dụng định kỳ, chọn đúng Pricing Model và tự động tắt môi trường test ngoài giờ, dự án nhỏ của bạn đã có thể tiết kiệm một khoản ngân sách rất đáng kể mỗi tháng đấy.
 
 **Nguồn tham khảo:**
-1. AWS Documentation, What is Amazon VPC? — <https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html>
-2. AWS Documentation, How Amazon VPC works — <https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html>
-3. AWS Documentation, Subnets for your VPC — <https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html>
-4. AWS Documentation, Pricing for NAT gateways — <https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-pricing.html>
+1. AWS Documentation, Amazon EC2 billing and purchasing options — <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html>
+2. AWS Documentation, Choosing a purchasing option for Amazon EC2 — <https://docs.aws.amazon.com/decision-guides/latest/decision-guides/ec2-purchasing-options-aws-how-to-choose.html>
+3. AWS Solutions, Instance Scheduler on AWS — <https://docs.aws.amazon.com/solutions/instance-scheduler-on-aws/>
+4. AWS, AWS Lambda Pricing — <https://aws.amazon.com/lambda/pricing/>
 
 **Images:**
-<img width="1197" height="540" alt="image" src="https://github.com/user-attachments/assets/2a6d1d58-6c04-45f3-aa46-0472a69a95ce" />
-
+<img width="960" height="504" alt="image" src="https://github.com/user-attachments/assets/053e4345-3ba8-4183-a7eb-9824a7082e22" />
 
 **Post link:**
-<https://www.facebook.com/share/1AJRKi1ZWx/?>
+<https://www.facebook.com/share/1EugopND2c/?>
