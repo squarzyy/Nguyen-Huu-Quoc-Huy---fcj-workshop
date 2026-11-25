@@ -1,28 +1,25 @@
 ---
 title: "Proposal"
-date: 2024-01-01
+date: 2026-11-25
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
-
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# P.M.B - Serverless mutiplayer web game with AWS services.
+## A Co-op puzzle game that player passing balls between eachothers to the basket.
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+The P.M.B (Pass me Bro) is designed for the Headless Game team in Hanoi to launch a web version of their game for easier marketing and collect player's play data purpose before the official release. The game support both mutiplayer (Co-op 3 members) and single player . The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
 
 ### 2. Problem Statement
 ### What’s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+Headless Game team want to launch a web version of their game without have to constrained by hard server hosting and 24/7 working which not fit with their 2 months of pre-marketing. They need a server service that are flexible enough to scale with the user's access to their game features such as physics, room creations, leaderboard and player's data and as well able to launch on the user's browser with ease through QR code scan.
 
 ### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+The game use well known technology to build and design on web with HTML5 for structure, CSS for frontend. Phaser 4 serve as a game engine run on the client's side, response for graphic render, manage game elements and Matter.js for physic engines that already bundled in Phaser. Node.js responsible for backend to run Socket.io server to mangage cycle of rooms and process internet connection.
+
+On AWS services we are going to use Amazon S3 + Amazon CloudFront for frontend hosting which store and distribute globally static web files( HTML, JS, JSON, Phaser, sounds). Amazon API Gateway (HTTPS APIs) and AWS Lambda for room creation and invite link generation. Amazon DynamoDb for rapid NoSQL database connection. Amazon API Gateways to manage Websocket connection so players can receive data through AWS. Lastly is AWS Fargate for serverless and pay-as-you-go compute engine for in game tasks and work with Amazon Elastic Container Service.
 
 ### Benefits and Return on Investment
 The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
