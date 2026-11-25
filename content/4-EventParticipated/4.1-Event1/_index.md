@@ -40,14 +40,6 @@ pre: " <b> 4.1. </b> "
 - Introduce to Strands: Controlled Agent Orchestration.
 - Introduce to Langfuse, an Agent Observer that trace agent workflows and tool calls.
 
-#### Inbound and Outbound
-
-Exploring and learning the core reasons why Cloud network security requires focused attention.
-
-- Protecting systems through a multi-layered defense approach.
-- Built-in AWS security services (Security Groups, Network ACLs, etc.).
-- System isolation, risk control, and continuous monitoring.
-
 #### Technical View
 
 - Guard AI from harmful, exploit requests.
